@@ -14,10 +14,12 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
+#include <ctype.h>
 #include <sys/wait.h>
 
 extern char **environ;
 void freeall(char **arg);
+void handle_exit(char **arg, char *cmd);
 void _exec(char **args, char *echo, char *cmd);
 void _writechar(char c);
 void _writechar1(char c);

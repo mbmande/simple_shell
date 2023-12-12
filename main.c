@@ -69,9 +69,16 @@ int main(int argc, char **argv)
 		}
 		if (strcmp(c20[0], "exit") == 0)
 		{
-			freeall(c20);
-			free(line);
-			exit(0);
+			if (c20[1] == NULL)
+			{
+				freeall(c20);
+				free(line);
+				exit(0);
+			}
+			else
+			{
+				handle_exit(c20, line);
+			}
 		}
 
 		if (strcmp(c20[0], "env") == 0)
@@ -84,8 +91,14 @@ int main(int argc, char **argv)
 				i++;
 			}
 		}
-
-		_exec(c20, "None", line);
+		if (strcmp(c20[0], "echo") == 0)
+		{
+			_exec(c20, "echo", line);
+		}
+		else
+		{
+			_exec(c20, "None", line);
+		}
 
 		freeall(c20);
 	}
