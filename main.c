@@ -96,11 +96,11 @@ int main(int argc, char **argv)
 		}
 		if (strcmp(c20[0], "echo") == 0)
 		{
-			_exec(c20, "echo", line);
+			_exec(c20, "echo", line, c20);
 		}
 		else
 		{
-			_exec(c20, "None", line);
+			_exec(c20, "None", line, c20);
 		}
 
 		freeall(c20);

@@ -1,12 +1,13 @@
 #include "main.h"
-void  _exec(char **args, char *echo, char *cmd);
+void  _exec(char **args, char *echo, char *cmd, char **av);
 /**
  * _exec - ===========
  * @args:  =============
  * @echo: ==================
  * @cmd: =====
+ * @av: =====
  */
-void _exec(char **args, char *echo, char *cmd)
+void _exec(char **args, char *echo, char *cmd, char **av)
 {
 	int pid;
 	int exit_status;
@@ -70,6 +71,7 @@ void _exec(char **args, char *echo, char *cmd)
 			if (exit_status  != 0 && (!isatty(STDIN_FILENO)))
 			{
 				free(cmd);
+				freeall(av);
 				if (exit_status == 1)
 					exit(127);
 				exit(exit_status);

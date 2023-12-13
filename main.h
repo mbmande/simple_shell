@@ -20,7 +20,7 @@
 extern char **environ;
 void freeall(char **arg);
 void handle_exit(char **arg, char *cmd);
-void _exec(char **args, char *echo, char *cmd);
+void _exec(char **args, char *echo, char *cmd, char **av);
 void _writechar(char c);
 void _writechar1(char c);
 void print_no(long num);
