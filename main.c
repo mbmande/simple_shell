@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		c20 =  malloc(sizeof(char *) * 100);
+		i = 0;
 		while (i < 100)
 		{
 			c20[i] = NULL;
@@ -90,6 +91,8 @@ int main(int argc, char **argv)
 				write(1, "\n", 1);
 				i++;
 			}
+			freeall(c20);
+			continue;
 		}
 		if (strcmp(c20[0], "echo") == 0)
 		{
